@@ -47,5 +47,5 @@ if (empty($errors)) {
     //print_r($result);
 }
 
-require_once './get_login.php';
+require_once './get_registration.php';
 ?>

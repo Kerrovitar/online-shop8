@@ -1,7 +1,8 @@
 <?php
 
-session_start();
+require_once __DIR__ . "/helpers.php";
+//session_destroy();
 unset($_SESSION['user_id']);
 
-require_once "./get_login.php";
+redirect('/login');
 ?>

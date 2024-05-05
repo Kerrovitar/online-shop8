@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . "/helpers.php";
 if(isset($_POST['email'])) {
     $email = $_POST['email'];
 }
@@ -25,13 +26,12 @@ if (empty($errors)) {
     } else {
         if (password_verify($password, $user['password'])) {
             //setcookie('user_id', $user['id']);
-            session_start();
             $_SESSION['user_id'] = $user['id'];
         } else {
             $errors_login['password'] = 'пароль указан не верно';
         }
     }
 }
-require_once './main.php';
+redirect('/main');
 
 ?>
