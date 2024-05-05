@@ -1,5 +1,6 @@
 <?php
-if(isset($_POST['email']) {
+
+if(isset($_POST['email'])) {
     $email = $_POST['email'];
 }
 if(isset($_POST['psw'])) {
@@ -31,6 +32,6 @@ if (empty($errors)) {
         }
     }
 }
-require_once './get_login.php';
+require_once './main.php';
 
 ?>

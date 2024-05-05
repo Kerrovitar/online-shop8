@@ -14,7 +14,7 @@ global$errors_login; <!DOCTYPE html>
             <h1>LOGIN</h1>
         </div>
         <div class="formm">
-            <form action="post_login.php" method="POST">
+            <form action="/login" method="POST">
                 <h2>Welcome user!
                 </h2>
                 <div class="info">

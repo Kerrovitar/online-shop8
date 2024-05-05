@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+//session_start();
 $_SESSION['user_id'];
 
 if(!isset($_SESSION['user_id'])) {
@@ -19,6 +19,7 @@ $result = $stmt->fetchAll();
 
 <div class="container">
     <h3>Catalog</h3>
+    <a href="/logout">Выйти</a>
     <div class="card-deck">
         <?php foreach ($result as $product): ?>
         <div class="card text-center">
@@ -44,7 +45,7 @@ $result = $stmt->fetchAll();
     body {
         font-style: sans-serif;
     }
-
+    }
     a:hover {
         text-decoration: none;
         font-size: 13px;
