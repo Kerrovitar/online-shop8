@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+global$errors_login; <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,7 +18,13 @@
                 <h2>Welcome user!
                 </h2>
                 <div class="info">
+                    <?php if (isset($errors_login['email'])) { ?>
+                        <label style="color: red"><?php echo $errors_login['email']; ?></label>
+                    <?php } ?>
                     <input class="email" type="email" placeholder="Email" name="email" id="email"> <br>
+                    <?php if (isset($errors_login['password'])) { ?>
+                        <label style="color:red"><?php echo $errors_login['password']; ?></label>
+                    <?php } ?>
                     <input class="email" type="password" placeholder="Password" name="psw" id="password">
                 </div>
                 <div class="btn">

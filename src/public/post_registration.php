@@ -3,10 +3,18 @@
 //print_r($_POST);
 $pdo = new PDO("pgsql:host=db; port=5432; dbname=dbname", 'dbuser', 'dbpwd');
 
-$name = $_POST['name'];
-$email = $_POST['email'];
-$password = $_POST['psw'];
-$passwordConfirmation = $_POST['psw-repeat'];
+if(isset($_POST['name'])) {
+    $name = $_POST['name'];
+}
+if(isset($_POST['email'])) {
+    $email = $_POST['email'];
+}
+if(isset($_POST['psw'])) {
+    $password = $_POST['psw'];
+}
+if(isset($_POST['psw-repeat'])) {
+    $passwordConfirmation = $_POST['psw-repeat'];
+}
 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 $errors = [];
 
@@ -39,5 +47,5 @@ if (empty($errors)) {
     //print_r($result);
 }
 
-require_once './get_registration.php';
+require_once './get_login.php';
 ?>
