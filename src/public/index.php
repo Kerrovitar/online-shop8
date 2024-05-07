@@ -1,34 +1,45 @@
 <?php
 
+require_once '../Controller/UserController.php';
+require_once '../Controller/ProductController.php';
+require_once '../Model/Product.php';
+require_once '../Model/User.php';
+
 $requestUri = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
 if($requestUri === '/login') {
     if($requestMethod === 'GET') {
-        require_once './get_login.php';
+        $userController = new UserController();
+        $userController->getLogin();
     } elseif($requestMethod === 'POST') {
-        require_once './post_login.php';
+        $userController = new UserController();
+        $userController->login();
     } else {
         echo "Для адреса $requestUri метод $requestMethod не поддерживается";
     }
 } elseif($requestUri === '/registration') {
     if($requestMethod === 'GET') {
-        require_once './get_registration.php';
+        $userController = new UserController();
+        $userController->get_registrate();
     } elseif($requestMethod === 'POST') {
-        require_once './post_registration.php';
+        $userController = new UserController();
+        $userController->registrate();
     } else {
         echo "Для адреса $requestUri метод $requestMethod не поддерживается";
     }
 } elseif($requestUri === '/main') {
     if($requestMethod === 'GET') {
-        require_once './main.php';
+        $productController = new ProductController();
+        $productController->getProducts();
     } else {
         echo "Для адреса $requestUri метод $requestMethod не поддерживается";
     }
 } elseif($requestUri === '/logout') {
-    require_once './logout.php';
+    $userController = new UserController();
+    $userController->logout();
 } else {
-    require_once './404.php';
+    require_once './../View/404.php';
 }
 
 ?>

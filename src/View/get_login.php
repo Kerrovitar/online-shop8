@@ -37,7 +37,7 @@ global$errors_login; <!DOCTYPE html>
                 </div>
                 <div class="signup">
                     <p>New to User ?</p>
-                    <a href="#">Sign up now</a>
+                    <a href="/registration">Sign up now</a>
                 </div>
             </form>
         </div>

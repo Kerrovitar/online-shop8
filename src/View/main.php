@@ -1,23 +1,3 @@
-<?php
-
-//session_start();
-require_once __DIR__ . "/helpers.php";
-$_SESSION['user_id'];
-
-if(!isset($_SESSION['user_id'])) {
-    header('Location: /get_login.php');
-}
-$userId = $_COOKIE['user_id'];
-
-$pdo = new PDO("pgsql:host=db; port=5432; dbname=dbname", 'dbuser', 'dbpwd');
-$stmt = $pdo->query("SELECT * FROM products");
-//$stmt->execute(['id' => $userId]);
-$result = $stmt->fetchAll();
-
-//print_r($result);
-//echo "city: {$user['city']}";
-?>
-
 <div class="container">
     <h3>Catalog</h3>
     <a href="/logout">Выйти</a>
